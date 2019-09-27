@@ -6,7 +6,7 @@ module Merit
              dependent: :destroy,
              class_name: 'Merit::Score::Point'
 
-    def points
+    def merit_points
       score_points.group(:score_id).sum(:num_points).values.first || 0
     end
 
